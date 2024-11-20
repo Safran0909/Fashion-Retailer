@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Document</title>
+</head>
+<body>
+    <header class="banners">
+        <nav class="nav">
+            <ul class="png">
+                <h1 class="logo">Armoire Luxe</h1>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <div class="imgs">
+                    <li><img src="images/search.png" width="50px" height="50px" alt="Search Icon"></li>
+                    <li><img src="images/cart.png" width="50px" height="50px" alt="Cart Icon"></li>
+                    <li><img src="images/like.png" width="50px" height="50px" alt="Like Icon"></li>
+                </div>
+            </ul>
+        </nav>
+    </header>
+    <article>
+        <strong><H1>PRODUCT OVERVIEW</H1></strong>
+        <header>
+            <nav>
+                <a href="#" onclick="filterProducts('all')">All Products</a>
+                <a href="#" onclick="filterProducts('women')">Women</a>
+                <a href="#" onclick="filterProducts('men')">Men</a>
+                <a href="#" onclick="filterProducts('bags')">Bags</a>
+                <a href="#" onclick="filterProducts('shoes')">Shoes</a>
+            </nav>
+        </header>
+
+        <div class="product-container" id="productContainer">
+            <!-- Men's Products -->
+            <div class="product" data-category="men">
+                <a href="jacket.html"><img src="/images/jacket.jfif" alt="Men's Shirt"></a>
+                <div class="product-info">
+                    <div class="product-title">Loose fit zipper</div>
+                    <div class="product-price"><span>$29.99</span></div>
+                </div>
+            </div>
+            <div class="product" data-category="men">
+                <a href="hoodie.html"><img src="/images/hoodie.jfif" alt="Men's Shirt"></a>
+                <div class="product-info">
+                    <div class="product-title">Loose fit Hoodie</div>
+                    <div class="product-price"><span>$49.99</span></div>
+                </div>
+            </div>
+
+            <!-- Women's Products -->
+            <div class="product" data-category="women">
+                <a href="coat.html"><img src="/images/coat.jfif" alt="Women's Dress"></a>
+                <div class="product-info">
+                    <div class="product-title">Rib-knit V-neck top</div>
+                    <div class="product-price"><span>$39.99</span></div>
+                </div>
+            </div>
+
+            <div class="product" data-category="women">
+                <a href="blouse.html"><img src="/images/blouse.jfif" alt="Women's Dress"></a>
+                <div class="product-info">
+                    <div class="product-title">Flounce Blouse</div>
+                    <div class="product-price"><span>$89.99</span></div>
+                </div>
+            </div>
+
+            <!-- Bags -->
+            <div class="product" data-category="bags">
+                <a href="bag.html"><img src="/images/bag.jfif" alt="Leather Bag"></a>
+                <div class="product-info">
+                    <div class="product-title">Long Shoulder Bag</div>
+                    <div class="product-price"><span>$49.99</span></div>
+                </div>
+            </div>
+
+            <!-- Shoes -->
+            <div class="product" data-category="shoes">
+                <a href="shoes.html"><img src="/images/shoes.jpg" alt="Sneakers"></a>
+                <div class="product-info">
+                    <div class="product-title">Formal Shoes</div>
+                    <div class="product-price"><span>$59.99</span></div>
+                </div>
+            </div>
+        </div>
+        <script src="script.js"></script>
+    </article>
+</body>
+</html>

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Loose Fit Washed Hoodie</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+    
+        header {
+            background-color: #f0f0f0;
+            padding: 10px 0;
+        }
+    
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+    
+        nav a {
+            text-decoration: none;
+            color: #333;
+        }
+    
+        main {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .product-gallery {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            width: 700px;
+        }
+
+        .product-gallery img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            border: 1px solid #ccc;
+        }
+    
+        .product-info {
+            max-width: 300px;
+            margin-left: 20px;
+        }
+    
+        .product-title {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+    
+        .product-price {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+    
+        .product-color {
+            margin-bottom: 10px;
+        }
+    
+        .product-color-swatch {
+            width: 30px;
+            height: 30px;
+            border: 1px solid #ccc;
+            margin-right: 5px;
+        }
+    
+        .product-sizes {
+            margin-bottom: 10px;
+        }
+    
+        .product-size-button {
+            padding: 5px 10px;
+            border: 1px solid #ccc;
+            margin-right: 5px;
+        }
+
+        .product-size-button:hover {
+            background-color: #007bff;
+        }
+    
+        .product-add-button {
+            padding: 10px 20px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    
+        .product-add-button:hover {
+            background-color: #444;
+        }
+    </style>
+</head>
+<body>
+    <header class="banners">
+        <nav class="nav">
+            <ul class="png">
+                <h1 class="logo">Armoire Luxe</h1>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <div class="imgs">
+                    <li><img src="images/search.png" width="50px" height="50px" alt="Search Icon"></li>
+                    <li><img src="images/cart.png" width="50px" height="50px" alt="Cart Icon"></li>
+                    <li><img src="images/like.png" width="50px" height="50px" alt="Like Icon"></li>
+                </div>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <div class="product-gallery">
+            <img src="/images/blouse.jfif" alt="Loose Fit Washed Hoodie - Front view">
+            <img src="/images/blouse2.webp" alt="Loose Fit Washed Hoodie - Model">
+            <img src="/images/blouse3.webp" alt="Loose Fit Washed Hoodie - Flat lay">
+            <img src="/images/blouse4.webp" alt="Loose Fit Washed Hoodie - Close-up">
+        </div>
+        
+        <div class="product-info">
+            <h1 class="product-title">Loose Fit Washed Hoodie</h1>
+            <p class="product-price">$49.99</p>
+            <p class="product-color">Color: <span class="product-color-swatch" style="background-color: dark brown;"></span>Dark Brown</p>
+            <p class="product-sizes">Sizes: 
+                <button class="product-size-button">XS</button>
+                <button class="product-size-button">S</button>
+                <button class="product-size-button">M</button>
+                <button class="product-size-button">L</button>
+                <button class="product-size-button">XL</button>
+            </p>
+            <button class="product-add-button">Add to Cart</button>
+        </div>
+    </main>
+</body>
+</html>

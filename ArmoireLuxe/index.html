@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Document</title>
+    <style>
+        .product {
+            position: relative;
+            width: 200px;
+            margin: 20px;
+            overflow: hidden;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .product img {
+            width: 100%;
+            height: auto;
+            transition: transform 0.3s ease;
+        }
+
+        .product:hover {
+            transform: scale(1.05); 
+        }
+
+        .product:hover img {
+            transform: scale(1.1); 
+        }
+
+        /* Overlay Text */
+        .product-info {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.5);
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            opacity: 0;
+            transform: translateY(100%);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+
+        .product:hover .product-info {
+            opacity: 1;
+            transform: translateY(0); 
+        }
+    </style>
+</head>
+<body>
+    <header class="banners">
+        <nav class="nav">
+            <ul class="png">
+                <h1 class="logo">Armoire Luxe</h1>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#footer">Contact</a></li>
+                <div class="imgs">
+                    <li style="position: relative;">
+                        <img src="images/search.png" width="50px" height="50px" alt="Search Icon" onclick="toggleSearchBar()" id="searchIcon">
+                        <div id="searchBarContainer" style="display: none;">
+                            <input type="text" id="searchInput" placeholder="Search products..." style="padding: 5px 2px; font-size: 16px; border: 1px solid #ccc; border-radius: 5px;">
+                            <button onclick="searchProducts()" id="searchBtn" style="border: none; background-color: transparent; cursor: pointer;">
+                                <img src="images/search.png" width="50px" height="50px" alt="Search Icon">
+                            </button>
+                        </div>
+                    </li>
+                    <li><img src="images/cart.png" width="50px" height="50px" alt="Cart Icon"></li>
+                    <li><img src="images/like.png" width="50px" height="50px" alt="Like Icon"></li>
+                </div>
+            </ul>
+        </nav>
+    </header>
+    <!-- Search Bar (Initially Hidden) -->
+    <section class="banner-section">
+        <div class="banner-content">
+            <h1>Women Collection 2024</h1> 
+            <h1 class="season">NEW SEASON</h1>
+        </div>
+    </section>
+    <br>
+    <br>
+    <br>
+    <section class="items">
+        <div class="image-gallery">
+            <div class="image-container">
+                <img src="images/women.jpg" alt="Image 1" />
+                <div class="overlay">
+                    <a href="shop.html"><u><p>SHOP WOMENS</p></u></a>
+                </div>
+            </div>
+            <br>
+            <br>
+            <div class="image-container">
+                <img src="images/men.jpg" alt="Image 2" />
+                <div class="overlay">
+                    <a href="shop.html"><u><p>SHOP MENS</p></u></a>
+                </div>
+            </div>
+            <br>
+            <br>
+            <div class="image-container">
+                <img src="/images/acc.jpg"alt="Image 3" />
+                <div class="overlay">
+                    <a href="shop.html"><u><p>SHOP ACCESSORIES</p></u></a>
+                </div>
+            </div>
+        </div>
+        <br>
+        <br>
+    </section>
+    <article>
+        <strong><h1>PRODUCT OVERVIEW</h1></strong>
+        <header>
+            <nav>
+                <a href="#" onclick="filterProducts('all')">All Products</a>
+                <a href="#" onclick="filterProducts('women')">Women</a>
+                <a href="#" onclick="filterProducts('men')">Men</a>
+                <a href="#" onclick="filterProducts('bags')">Bags</a>
+                <a href="#" onclick="filterProducts('shoes')">Shoes</a>
+            </nav>
+        </header>
+        <div class="product-container" id="productContainer">
+            <!-- Men's Products -->
+            <div class="product" data-category="men">
+                <a href="jacket.html"><img src="/images/jacket.jfif" alt="Men's Shirt"></a>
+                <div class="product-info">
+                    <div class="product-title">Loose fit zipper</div>
+                    <div class="product-price"><span>$29.99</span></div>
+                </div>
+            </div>
+            <div class="product" data-category="men">
+                <a href="hoodie.html"><img src="/images/hoodie.jfif" alt="Men's Shirt"></a>
+                <div class="product-info">
+                    <div class="product-title">Loose fit Hoodie</div>
+                    <div class="product-price"><span>$49.99</span></div>
+                </div>
+            </div>
+            <!-- Women's Products -->
+            <div class="product" data-category="women">
+                <a href="coat.html"><img src="/images/coat.jfif" alt="Women's Dress"></a>
+                <div class="product-info">
+                    <div class="product-title">Rib-knit V-neck top</div>
+                    <div class="product-price"><span>$39.99</span></div>
+                </div>
+            </div>
+            <div class="product" data-category="women">
+                <a href="blouse.html"><img src="/images/blouse.jfif" alt="Women's Dress"></a>
+                <div class="product-info">
+                    <div class="product-title">Flounce Blouse</div>
+                    <div class="product-price"><span>$89.99</span></div>
+                </div>
+            </div>
+            <!-- Bags -->
+            <div class="product" data-category="bags">
+                <a href="bag.html"> <img src="/images/bag.jfif" alt="Leather Bag"></a>
+                <div class="product-info">
+                    <div class="product-title">Long Shoulder Bag</div>
+                    <div class="product-price"><span>$49.99</span></div>
+                </div>
+            </div>
+            <!-- Shoes -->
+            <div class="product" data-category="shoes">
+                <a href="shoes.html"><img src="/images/shoes.jpg" alt="Sneakers"></a>
+                <div class="product-info">
+                    <div class="product-title">Formal Shoes</div>
+                    <div class="product-price"><span>$59.99</span></div>
+                </div>
+            </div>
+        </div>
+        <script src="script.js"></script>
+    </article>
+    <footer id="footer">
+        <div class="container">
+            <div class="column">
+                <h2>CATEGORIES</h2>
+                <ul>
+                    <li>Women</li>
+                    <li>Men</li>
+                    <li>Shoes</li>
+                    <li>Watches</li>
+                </ul>
+            </div>
+            <div class="column">
+                <h2>HELP</h2>
+                <ul>
+                    <li>Track Order</li>
+                    <li>Returns</li>
+                    <li>Shipping</li>
+                    <li>FAQS</li>
+                </ul>
+            </div>
+            <div class="column">
+                <h2>GET IN TOUCH</h2>
+                <p>Any questions? Let us know in store at 8th floor, 379 Hudson St, New York, <br> NY 10018 or email@example.com</p>
+                <p>Call us on (+91) ## ### #####</p>
+            </div>
+            <div class="column">
+                <h2>NEWSLETTER</h2>
+                <p>SUBSCRIBE</p>
+                <input type="email" class="newsletter-input" placeholder="Enter your email">
+                <button class="subscribe-button">Subscribe</button>
+            </div>
+        </div>
+        <div class="footer">
+            <p>Copyright &copy;2024 All rights reserved</p>
+            <div class="payment-logos">
+                <img src="/images/paypal.png" alt="PayPal">
+                <img src="/images/visa.png" alt="VISA">
+            </div>
+            <div class="social-links">
+                <a href="#">Facebook</a>
+                <a href="#">Twitter</a>
+                <a href="#">Instagram</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
